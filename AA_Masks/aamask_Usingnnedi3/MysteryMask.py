@@ -2,6 +2,12 @@ from vapoursynth import core
 import vapoursynth as vs
 
 def Myst_aamask(clip,ts=1.5,ds_rate=1):
+	lut_aamask = []
+	for i in range(65536):
+		if i*3>=65536:
+			lut_aamask.append(65535)
+		else:
+			lut_aamask.append(3*i)
 	clip = clip.std.ShufflePlanes( [0], colorfamily=vs.GRAY)
 	cliptr = clip.std.Transpose()
 	nn1 = clip.znedi3.nnedi3( field=0,dh=False,nsize=4,show_mask = True)
