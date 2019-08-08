@@ -1,6 +1,7 @@
 from vapoursynth import core
 import vapoursynth as vs
 
+# made by some alchohol and barbecue
 def Myst_aamask(clip,ts=1.5,ds_rate=1):
 	lut_aamask = []
 	for i in range(65536):
